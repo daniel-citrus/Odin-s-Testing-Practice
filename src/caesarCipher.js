@@ -22,7 +22,7 @@ export function caesarCipher(str, shift) {
 }
 
 /**
- * Shift letter according to the shift value.
+ * Shift letter according to the shift factor.
  * shiftLetter('a', 2) => c
  * shiftLetter('b', 1) => c
  * shiftLetter('a', -1) => z
@@ -30,17 +30,21 @@ export function caesarCipher(str, shift) {
  */
 function shiftLetter(letter, shift) {
     const ascii = letter.charCodeAt(0);
-    let shiftBy = ascii + shift;
 
-    if (shiftBy > 122) {
-        shiftBy = (shiftBy % 123) + 97;
-    } else if (shiftBy < 97) {
+    shift %= 26;
+
+    if (shift < 0) {
+        shift = 26 + shift;
     }
 
-    console.log(`${letter} (${shiftBy})`);
-    letter = String.fromCharCode(shiftBy);
+    let newLetter = ascii + shift;
 
-    return letter;
+    if (newLetter > 122) {
+        newLetter %= 123;
+        newLetter += 97;
+    }
+
+    return String.fromCharCode(newLetter);
 }
 
 function isLetter(character) {

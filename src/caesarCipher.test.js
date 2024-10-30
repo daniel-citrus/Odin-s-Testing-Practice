@@ -9,7 +9,7 @@ describe('caesar cipher encryption', () => {
             expect(caesarCipher(' ', 99)).toBe(' ');
             expect(caesarCipher('Whitebeard', 4)).toBe('Almxifievh');
             expect(caesarCipher('Go Beyond', 6)).toBe('Mu Hkeutj');
-            expect(caesarCipher('abc', 985)).toBe('jkl');
+            expect(caesarCipher('abc', 985)).toBe('xyz');
         });
 
         it('with integers', () => {
@@ -48,12 +48,12 @@ describe('caesar cipher encryption', () => {
                 caesarCipher(`I'm gonna be the King of the Pirates!`, -53)
             ).toBe(`H'l fnmmz ad sgd Jhmf ne sgd Ohqzsdr!`);
             expect(caesarCipher('Go Beyond, Plus Ultra!', -4)).toBe(
-                'Ck Xaukjz, Ljqo Qhpnw!'
+                'Ck Xaukjz, Lhqo Qhpnw!'
             );
             expect(caesarCipher('Go Beyond, Plus Ultra!', -44)).toBe(
                 'Ow Jmgwvl, Xtca Ctbzi!'
             );
-            expect(caesarCipher('abc', -658)).toBe('');
+            expect(caesarCipher('abc', -658)).toBe('stu');
         });
     });
 });
