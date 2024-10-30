@@ -9,6 +9,7 @@ describe('caesar cipher encryption', () => {
             expect(caesarCipher(' ', 99)).toBe(' ');
             expect(caesarCipher('Whitebeard', 4)).toBe('Almxifievh');
             expect(caesarCipher('Go Beyond', 6)).toBe('Mu Hkeutj');
+            expect(caesarCipher('abc', 985)).toBe('jkl');
         });
 
         it('with integers', () => {
@@ -52,6 +53,7 @@ describe('caesar cipher encryption', () => {
             expect(caesarCipher('Go Beyond, Plus Ultra!', -44)).toBe(
                 'Ow Jmgwvl, Xtca Ctbzi!'
             );
+            expect(caesarCipher('abc', -658)).toBe('');
         });
     });
 });
