@@ -40,7 +40,7 @@ function shiftLetter(letter, shift) {
     let newLetter = ascii + shift;
 
     if (newLetter > 122) {
-        newLetter %= 123;
+        newLetter %= 123; // reduce to remove full loops
         newLetter += 97;
     }
 
