@@ -10,18 +10,29 @@ export function analyze(array) {
 }
 
 function cleanArray(array) {
-    array = array.map((element) => {
-        return +element;
-    });
-
+    // eliminate null and undefined values
     array = array.filter((element) => {
-        
         if (element === null || element === undefined || element === NaN) {
             return false;
         }
 
         return true;
     });
+
+    // convert strings into integers
+    array = array.map((element) => {
+        return +element;
+    });
+
+    array = array.filter((element) => {
+        if (element === NaN) {
+            return false;
+        }
+
+        return true;
+    });
+
+    return array;
 }
 
 function getAverage(array) {
