@@ -9,6 +9,7 @@ export function analyze(array) {
     };
 }
 
+// create a new array containing only valid elements
 function cleanArray(array) {
     // eliminate null and undefined values
     array = array.filter((element) => {
